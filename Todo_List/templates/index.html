@@ -23,6 +23,29 @@
             </li>
             {% endfor %}
         </ul>
+        <div class="theme-toggle">
+            <button id="theme-btn">
+                <span class="sun">🌞</span>
+                <span class="moon">🌙</span>
+            </button>
+        </div>
     </div>
+    <script>
+        const themeBtn = document.getElementById('theme-btn');
+        const body = document.body;
+    
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', savedTheme);
+    
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+
 </body>
 </html>

@@ -208,3 +208,149 @@ li.done span::after {
     60% { content: "..."; }
     80%, 100% { content: ""; }
 }
+
+
+/* adding Dark Mode  */
+.dark-mode {
+    background: #121212;
+    color: #f8f8f8;
+}
+
+.dark-mode h1::after {
+    background: #f8f8f8;
+}
+
+.dark-mode input[type="text"] {
+    background: rgba(0, 0, 0, 0.7);
+    color: #f8f8f8;
+}
+
+.dark-mode button[type="submit"] {
+    background: #7b4f9d;
+}
+
+.dark-mode button[type="submit"]:hover {
+    background: #5c2d91;
+}
+
+.dark-mode ul {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode li {
+    background: #1a1a1a;
+}
+
+.dark-mode li.done span {
+    color: #888;
+}
+
+.dark-mode .btn {
+    background: #1a1a1a;
+}
+
+.dark-mode .delete-btn {
+    background: #4d4d4d;
+    color: #f8f8f8;
+}
+
+.dark-mode .delete-btn:hover {
+    background: #ff4444;
+}
+
+.dark-mode .done-btn {
+    background: #4d4d4d;
+    color: #f8f8f8;
+}
+
+.dark-mode .done-btn:hover {
+    background: #5c2d91;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    input[type="text"] {
+        padding: 12px 16px;
+    }
+
+    button[type="submit"] {
+        padding: 12px 24px;
+    }
+
+    li {
+        padding: 16px;
+    }
+}
+
+
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --container-bg: #ffffff;
+    --input-bg: #f8f8f8;
+    --border-color: #e0e0e0;
+    --btn-hover: #45a049;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #1F51FF;
+    --container-bg: #2d2d2d;
+    --input-bg: #3d3d3d;
+    --border-color: #4d4d4d;
+    --btn-hover: #4a2475;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    background-color: var(--container-bg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    background-color: var(--input-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+#theme-btn:hover {
+    transform: rotate(15deg);
+}
+
+.moon { display: none; }
+[data-theme="dark"] .moon { display: inline; }
+[data-theme="dark"] .sun { display: none; }
